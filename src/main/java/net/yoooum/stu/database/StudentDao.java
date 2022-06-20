@@ -21,7 +21,6 @@ public class StudentDao {
      * @param sex  性别( 男 or 女 )
      */
     public void create(String sid, String name, int age, String sex) {
-        //SqlExec sqlExec = new SqlExec();
         String sql = "insert into tb_student values ('" + sid + "','" + name + "'," + age + ",'" + sex + "')";
         int resultSet = sqlExec.update(sql);
         if (resultSet > 0) {
@@ -36,7 +35,6 @@ public class StudentDao {
      * @param sid 学号
      */
     public void delete(String sid) {
-        //SqlExec sqlExec = new SqlExec();
         String sql = "delete from tb_student where sid = '" + sid + "'";
         int resultSet = sqlExec.update(sql);
         if (resultSet > 0) {
@@ -51,7 +49,6 @@ public class StudentDao {
      * @param any 学号 或 姓名
      */
     public void retrieve(String any) {
-        //SqlExec sqlExec = new SqlExec();
         String sql = "select * from tb_student where sid = '" + any + "' or name = '" + any + "'";
         ResultSet resultSet = sqlExec.query(sql);
         if (resultSet != null) {
@@ -78,7 +75,6 @@ public class StudentDao {
      * @param sex  修改性别
      */
     public void update(String sid, String name, int age, String sex) {
-        //SqlExec sqlExec = new SqlExec();
         String sql = "update tb_student set name = '" + name + "',age=" + age + ",sex='" + sex + "' " + "where sid = '" + sid + "'";
         int resultSet = sqlExec.update(sql);
         if (resultSet > 0) {
