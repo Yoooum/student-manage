@@ -1,0 +1,9 @@
+
+b
+java:S2095V"GUse try-with-resources or close this "Statement" in a "finally" clause.(žæÄ™üÿÿÿÿ
+]
+java:S2095A"GUse try-with-resources or close this "Statement" in a "finally" clause.(î–òâ
+N	java:S106C"9Replace this use of System.out or System.err by a logger.(¦÷Êõ
+S	java:S106E"9Replace this use of System.out or System.err by a logger.(‚íé·üÿÿÿÿ
+M	java:S106W"9Replace this use of System.out or System.err by a logger.(âå°3
+S	java:S106Z"9Replace this use of System.out or System.err by a logger.(§ð¥¹úÿÿÿÿ

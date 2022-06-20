@@ -1,0 +1,20 @@
+
+b
+java:S2095@"GUse try-with-resources or close this "Statement" in a "finally" clause.(†øÚÏıÿÿÿÿ
+œ
+java:S1186%"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ôĞ•øÿÿÿÿ
+œ
+java:S1186&"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ƒ¥àâøÿÿÿÿ
+—
+java:S1186'"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ğ©ş©
+œ
+java:S1186("€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¹–Èùÿÿÿÿ
+2
+java:S6205 "Remove this redundant block.(üØô
+N	java:S106!"9Replace this use of System.out or System.err by a logger.(‹®ÅÉ
+N	java:S1064"9Replace this use of System.out or System.err by a logger.(ñ–ß­
+X
+java:S1854@"=Remove this useless assignment to local variable "resultSet".(†øÚÏıÿÿÿÿ
+N	java:S106D"9Replace this use of System.out or System.err by a logger.(ñ–ß­
+?
+java:S1144")Remove this unused private "stmt" method.(ƒÕÕÈ
