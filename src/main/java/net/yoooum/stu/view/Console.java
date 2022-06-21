@@ -18,8 +18,6 @@ public class Console {
 
     public void consoleView() {
         if (isLogin) {
-
-            while (true) {
                 System.out.println("请选择您要进行的操作: ");
                 System.out.println("0.命令模式");
                 System.out.println("1.查询学生");
@@ -31,11 +29,26 @@ public class Console {
                 int choice = 0;
                 choice = scanner.nextInt();
                 switch (choice) {
-                    case 0 -> consoleExec();
-                    case 1 -> studentSearch();
-                    case 2 -> studentAdd();
-                    case 3 -> studentUpdate();
-                    case 4 -> studentDelete();
+                    case 0 -> {
+                        consoleExec();
+                        break;
+                    }
+                    case 1 -> {
+                        studentSearch();
+                        break;
+                    }
+                    case 2 -> {
+                        studentAdd();
+                        break;
+                    }
+                    case 3 -> {
+                        studentUpdate();
+                        break;
+                    }
+                    case 4 -> {
+                        studentDelete();
+                        break;
+                    }
                     case 5 -> {
                         System.out.println("已退出");
                         System.exit(0);
@@ -43,15 +56,26 @@ public class Console {
                     default -> System.out.println("未指定的操作, 请重新输入！");
                 }
             }
+        else {
+            System.out.println("登录失败");
+        }
         }
 
 
-    }
 
     private void todo() {
         System.out.println("暂未实现,进入命令模式");
     }
-
+    private  void  back(){
+        System.out.println("是否返回主界面(y/n)");
+        Scanner scan = new Scanner(System.in);
+        String choice = scan.nextLine();
+        if (choice.equals("y")||choice.equals("Y")) {
+            consoleView();
+        } else {
+            System.exit(0);
+        }
+    }
     private void consoleExec() {
         SqlExec sqlExec = new SqlExec();
         Scanner scan = new Scanner(System.in);
@@ -69,10 +93,7 @@ public class Console {
         String choice = scan.nextLine();
         if (choice.equals("y")) {
             consoleExec();
-        } else {
-
-            consoleView();
-        }
+        }else back();
         scan.close();
     }
 
@@ -83,6 +104,12 @@ public class Console {
             //new SqlExec().exec(scanner.next());
             new StudentDao().retrieve(scanner.next());
         }
+        System.out.println("继续查询学生(y/n)");
+        Scanner scan = new Scanner(System.in);
+        String choice = scan.nextLine();
+        if (choice.equals("y")) {
+            studentSearch();
+        }else back();
     }
 
     private void studentAdd(){
@@ -93,6 +120,12 @@ public class Console {
         int age = Integer.parseInt(scanner.next());
         String sex = scanner.next();
         new  StudentDao().create(sid,name,age,sex);
+        System.out.println("继续添加学生(y/n)");
+        Scanner scan = new Scanner(System.in);
+        String choice = scan.nextLine();
+        if (choice.equals("y")) {
+            studentAdd();
+        }else back();
     }
 
     private void studentUpdate(){
@@ -103,12 +136,26 @@ public class Console {
         int age = Integer.parseInt(scanner.next());
         String sex = scanner.next();
         new StudentDao().update(sid,name,age,sex);
+
+        System.out.println("继续修改学生(y/n)");
+        Scanner scan = new Scanner(System.in);
+        String choice = scan.nextLine();
+        if (choice.equals("y")) {
+            studentUpdate();
+        }else back();
     }
 
     private void studentDelete(){
         Scanner scanner = new Scanner(System.in);
         System.out.println("根据学号删除学生: ");
         new StudentDao().delete(scanner.next());
+
+        System.out.println("继续删除学生(y/n)");
+        Scanner scan = new Scanner(System.in);
+        String choice = scan.nextLine();
+        if (choice.equals("y")) {
+            studentDelete();
+        }else back();
     }
     private boolean userLogin() {
         Scanner scanner = new Scanner(System.in);
